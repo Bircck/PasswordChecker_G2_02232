@@ -1,0 +1,15 @@
+Good ideas to do:
+- https://www.passwordmonster.com/
+    password strength in how long it takes to crack
+
+- 3 tabs:
+    - Bare checke passwordet mod database
+    - Bare checke password via js med checkboxes omkring: capital letter, length, special character, etc.
+    - begge to samtidigt
+
+
+Theme:
+https://colorffy.com/dark-theme-generator
+#1f54ab
+#121212
+mix intensity 0.4
