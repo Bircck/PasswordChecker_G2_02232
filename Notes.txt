@@ -13,3 +13,9 @@ https://colorffy.com/dark-theme-generator
 #1f54ab
 #121212
 mix intensity 0.4
+
+Color primary
+#0297bd
+Color dark
+#121212
+Mix intensity 0.5

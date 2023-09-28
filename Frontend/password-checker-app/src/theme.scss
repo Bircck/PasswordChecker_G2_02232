@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'NeoSans';
+    src: local('NeoSans'), url(fonts/NeoSansProRegular.OTF) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$header-grey: #262626;
+$primary-color-dtu: #990000;
+
 // /** SCSS DARK THEME PRIMARY COLORS */
 // $primary-100: #1f54ab;
 // $primary-200: #4465b5;

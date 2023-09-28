@@ -1,7 +1,11 @@
 // import logo from './logo.svg';
+// import logo from './DTU_Logo_Hvid.png'; // Tell webpack this JS file uses this image
+
 // import './App.scss';
+import dtuLogo from './images/dtuLogoStandard.png';
+
 import "./App.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 
 function App() {
@@ -10,9 +14,9 @@ function App() {
   
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const togglePasswordVisibility = () => {
+  const togglePasswordVisibility = useCallback(() => {
     setIsPasswordVisible((prevIsPasswordVisible) => !prevIsPasswordVisible);
-  };
+  });
 
   const checkPassword = async () => {
     try {
@@ -27,12 +31,39 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "v" && event.altKey) {  // alt + v
+        togglePasswordVisibility();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [togglePasswordVisibility]);
+
   return (
     <div class="main-content">
+      <div class="header">
+        {/* <img src="C:\Users\tobia\OneDrive\Skrivebord\University\Kandidat\cryptography\PasswordChecker_G2_02232\Frontend\password-checker-app\public\logo192.png"></img> */}
+        {/* <img src="Frontend\password-checker-app\public\logo192.png"></img> */}
+        {/* <img style="height:100%" src="https://designguide.dtu.dk/-/media/subsites/designguide/design-basics/logo/dtu_logo_hvid.jpg"></img> */}
+        <a class="header-logo-link" href="https://www.inside.dtu.dk/">
+          <img class="header-logo" src={dtuLogo} alt="DTU"></img>
+        </a>
+        <p>Technical University of Denmark</p>
+      </div>
+      {/* <div class="headline">
+        DTU Reset password
+      </div> */}
       <div class="password-checker">
         <div class="password-checker-container">
-          <h1>Password Checker</h1>
-          <div style={{ position: 'relative', width: '200px' }}>
+          <h1>Reset Password</h1>
+          <div className="password-input-box">
             <input
               type={isPasswordVisible ? "text" : "password"}
               style={{ width: '100%' }}
