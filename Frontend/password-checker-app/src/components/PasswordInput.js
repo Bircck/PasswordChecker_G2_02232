@@ -1,15 +1,42 @@
 // src/components/PasswordInput.js
-import React from 'react';
+import React, { useState, useEffect, useCallback} from "react";
+import "./PasswordInput.scss";
 
-function PasswordInput({ isPasswordVisible, togglePasswordVisibility, password, setPassword }) {
+function PasswordInput({ password, setPassword, onKeyDown, disabled }) {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = useCallback(() => {
+    setIsPasswordVisible(prevIsPasswordVisible => !prevIsPasswordVisible);
+  }, [setIsPasswordVisible]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "v" && event.altKey) {  // alt + v
+        togglePasswordVisibility();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [togglePasswordVisibility]);
+
+  const handleChange = (event) => {
+    const newValue = event.target.value.replace(/\s/g, '');
+    setPassword(newValue);
+  };
+
   return (
     <div className="password-input-box">
       <input
         type={isPasswordVisible ? "text" : "password"}
         style={{ width: '100%' }}
+        onKeyDown={onKeyDown}
         value={password}
         placeholder="Enter password"
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={handleChange}
         className="password-input"
       />
       <i

@@ -11,13 +11,10 @@ conn = sqlite3.connect(db_path)
 # Create a new SQLite cursor
 cur = conn.cursor()
 
-# Create a new table with the name 'passwords'
+# Add a new column 'hashed_value' to the 'passwords' table
 cur.execute('''
-CREATE TABLE IF NOT EXISTS passwords (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    password TEXT,
-    hashed_password TEXT UNIQUE
-);
+ALTER TABLE passwords
+ADD COLUMN hashed_password TEXT;
 ''')
 
 # Commit the transaction

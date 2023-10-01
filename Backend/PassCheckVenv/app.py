@@ -1,17 +1,21 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import hashlib
 import sqlite3
 
 app = Flask(__name__)
 CORS(app)
 
-database_path = "Database\password_checker.db"
+database_path = "Database/password_checker.db"
 
 def check_password(password):
     conn = sqlite3.connect(database_path)
     cursor = conn.cursor()
     
-    cursor.execute('SELECT COUNT(*) FROM passwords WHERE password=?', (password,))
+    hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+    # hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+    
+    cursor.execute('SELECT COUNT(*) FROM passwords WHERE hashed_password=?', (hashed_password,))
     result = cursor.fetchone()
     
     conn.close()

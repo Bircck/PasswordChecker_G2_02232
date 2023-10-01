@@ -8,15 +8,11 @@
   font-style: normal;
 }
 
-$header-grey: #262626;
-$primary-color-dtu: #990000;
-
-.password-checker-container{
+.app{
+  height:100%;
+  width:100%;
   display:flex;
-  width: 100%;
-  height: 100%;
   flex-direction: column;
-  align-items: center;
 }
 
 .main-content{
@@ -24,133 +20,8 @@ $primary-color-dtu: #990000;
   width:100%;
 }
 
-.password-checker{
-   width:100%;
-   height:100%;
-   display:flex;
-}
-
-//#region header
-.header-logo{
-  width: auto;
-  height: 100%;
-}
-
-.header-logo-link{
-  width: auto;
-  height: 100%;
-  margin-right: 10px;
-}
-
-.header{
-  padding: 10px;
-  width: 100%;
-  height: 50px;
-  box-sizing:border-box;
-  background-color: $header-grey;
-  display:flex;
-  align-content: center;
-  align-items: center;
-  font-family: NeoSans;
-}
-
-.header > p{
-  width:auto;
-  margin:0px;
-  padding:0px;
-}
-
-//#endregion header
 
 //#region password input
-.password-input-box{
-  position: relative;
-  width: 200px;
-  box-sizing:border-box;
-}
 
-.password-input{
-  // background-color: $surface-200;
-  // color: white;
-  // border-radius: 50px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  border: 0px solid #00000000;
-  color: black;
-  height: 30px;
-  padding-left: 10px;
-  padding-right: 30px;
-  box-sizing: border-box;
-}
-
-.password-input:focus-visible{
-  outline: -webkit-focus-ring-color auto 0px;
-}
-
-.password-input:focus {
-  border: 0px solid #00000000;
-  color: black;
-}
-
-//Eye
-.password-container input[type="password"],
-.password-container input[type="text"]{
-  width: 100%;
-  padding: 12px 36px 12px 12px;
-  box-sizing: border-box;
-}
-.fa-eye{
-  position: absolute;
-  top: 28%;
-  right: 4%;
-  cursor: pointer;
-  color: lightgray;
-  // color: #b8b8b8
-}
-
-.fa{
-  color:lightgray;
-}
 //#endregion
 
-
-
-// .App {
-//   text-align: center;
-// }
-
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
-
-// .App-header {
-//   background-color: #282c34;
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
-
-// .App-link {
-//   color: #61dafb;
-// }
-
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
