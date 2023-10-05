@@ -49,7 +49,7 @@ const PassStrengthViz = ({ password }) => {
   const calculateStrength = password => {
     let strength = 0;
     if (password.length > 7) strength++;
-    if (/[a-z].?[A-Z]/g.test(password)) strength++;
+    if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
     if (/[0-9]{1}/.test(password)) strength++;
     if (/[!@#\$%\^\&*\)\(+=._-]/g.test(password)) strength++;
     return strength;
