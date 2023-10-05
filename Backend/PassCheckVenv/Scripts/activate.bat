@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\tobia\OneDrive\Skrivebord\University\Kandidat\cryptography\PasswordChecker_G2_02232\Backend\PassCheckVenv
+set VIRTUAL_ENV=C:\Users\TOK\OneDrive - Delegate A S\Skrivebord\University\AnvendtCrypto\PasswordChecker_G2_02232\Backend\PassCheckVenv
 
 if not defined PROMPT set PROMPT=$P$G
 
