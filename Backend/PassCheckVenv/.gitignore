@@ -279,3 +279,9 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/venv
+
+!processed_files.log
+
+Database/password_checkerbig.db
+Database/password_checkeromega.db
+Database/processed_files.log

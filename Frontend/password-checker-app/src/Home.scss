@@ -1,5 +1,27 @@
 @import "theme.scss";
 
+//#region status
+.status-text {
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: 10px;  // Adjusted for a softer corner
+  color: black;
+  font-size: 19px;  // Adjust as necessary
+}
+
+.status-text .good-status {
+  color: green;
+  font-weight: bold;  // Bold for emphasis
+}
+
+.status-text .bad-status {
+  color: red;
+  font-weight: bold;  // Bold for emphasis
+}
+
+//#endregion
+
+
 .password-checker-container{
     display:flex;
     width: 100%;
@@ -12,6 +34,7 @@
     width:100%;
     height:100%;
     display:flex;
+    font-family: 'NeoSans';
 }
 
 .password-button-spacing{

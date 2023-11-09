@@ -122,3 +122,6 @@ This project is open-source and available under the MIT License.
 Thanks to the open-source community for the continuous inspiration and support.
 Contact
 For any queries or suggestions, feel free to open an issue on the GitHub repository.
+
+Password strength checker based on lerida  
+https://codepen.io/lerida/pen/oNjdPGq

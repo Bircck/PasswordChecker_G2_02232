@@ -6,13 +6,15 @@ import sqlite3
 app = Flask(__name__)
 CORS(app)
 
-database_path = "Database/password_checker.db"
+#swap this depending on what database/name you are using
+database_path = "Database/password_checkeromega.db"
 
 def check_password(password):
     conn = sqlite3.connect(database_path)
     cursor = conn.cursor()
     
-    hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+    hashed_password = password
+    # hashed_password = hashlib.sha1(password.encode('utf-8')).hexdigest()
     # hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
     
     cursor.execute('SELECT COUNT(*) FROM passwords WHERE hashed_password=?', (hashed_password,))
