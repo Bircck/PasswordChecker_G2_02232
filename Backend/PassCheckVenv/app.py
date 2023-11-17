@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 #swap this depending on what database/name you are using
-database_path = "Database/password_checkeromega.db"
+database_path = "Database/password_checker.db"
 
 def check_password(password):
     conn = sqlite3.connect(database_path)
